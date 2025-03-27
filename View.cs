@@ -2,8 +2,8 @@ public class View
 {
     public void DisplayInFrame(string info)
     {                             //auto-adjustable frame
-        int contentLength = info.Length;
-        string line = new string('═', contentLength + 2);
+        int contentLength = info.Length + 2;        // +2 to include whitespaces both at start and end
+        string line = new string('═', contentLength);
         string top = "╔" + line + "╗";
         string middle = "║ " + info + " ║";
         string bottom = "╚" + line + "╝";

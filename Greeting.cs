@@ -39,7 +39,12 @@ public class Greeting{
         };
     }
 
-    public string GetHoroscope(DateTime birthDate) => $"You were born: {birthDate:d} and your zodiac sing is {GetZodiac(birthDate)}. A lot of happiness awaits you this month.";
+    public int DaysBetween(DateTime end, DateTime start){
+        TimeSpan difference = end - start;
+        return (int)difference.TotalDays;
+    }
+
+    public string GetHoroscope(DateTime birthDate) => $"You were born {DaysBetween(DateTime.Now, birthDate)} days before and your zodiac sing is {GetZodiac(birthDate)}. A lot of happiness awaits you this month.";
 
 
 }
